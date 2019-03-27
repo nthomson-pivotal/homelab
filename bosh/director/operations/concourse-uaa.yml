@@ -1,0 +1,16 @@
+- type: replace
+  path: /instance_groups/name=bosh/jobs/name=uaa/properties/uaa/clients/concourse-credhub?
+  value:
+    override: true
+    authorized-grant-types: client_credentials
+    scope: ""
+    authorities: credhub.read,credhub.write
+    access-token-validity: 30
+    refresh-token-validity: 3600
+    secret: ((concourse_to_credhub_secret))
+
+- type: replace
+  path: /variables?/name=concourse_to_credhub_secret?
+  value:
+    name: concourse_to_credhub_secret
+    type: password
