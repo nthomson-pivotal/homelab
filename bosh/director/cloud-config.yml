@@ -1,0 +1,93 @@
+azs:
+- name: z1
+  cloud_properties:
+    datacenters: 
+    - name: Management
+      clusters:
+      - Physical1: {}
+- name: z2
+  cloud_properties:
+    datacenters: 
+    - name: Management
+      clusters:
+      - Physical2: {}
+
+vm_types:
+- name: tiny
+  cloud_properties:
+    cpu: 2
+    ram: 1024
+    disk: 8_000
+- name: small
+  cloud_properties:
+    cpu: 2
+    ram: 2048
+    disk: 8_000
+- name: default
+  cloud_properties:
+    cpu: 2
+    ram: 2048
+    disk: 8_000
+- name: minimal
+  cloud_properties:
+    cpu: 2
+    ram: 2048
+    disk: 8_000
+- name: small-highmem
+  cloud_properties:
+    cpu: 2
+    ram: 4096
+    disk: 8_000
+- name: medium
+  cloud_properties:
+    cpu: 4
+    ram: 4096
+    disk: 30_240
+- name: large
+  cloud_properties:
+    cpu: 8
+    ram: 8192
+    disk: 51200
+- name: extra-large
+  cloud_properties:
+    cpu: 8
+    ram: 16384
+    disk: 51200
+
+disk_types:
+- name: default
+  disk_size: 5120
+- name: 1GB
+  disk_size: 1024
+- name: 5GB
+  disk_size: 5120
+- name: 10GB
+  disk_size: 10240
+- name: 50GB
+  disk_size: 51200
+- name: 100GB
+  disk_size: 102400
+- name: 500GB
+  disk_size: 512000
+- name: 1TB
+  disk_size: 1048576
+
+networks:
+- name: default
+  type: manual
+  subnets:
+  - range: 172.16.6.0/24
+    gateway: 172.16.6.1
+    azs: [z1, z2]
+    dns: [172.16.6.1]
+    reserved: [172.16.6.1-172.16.6.9] 
+    static: [172.16.6.10-172.16.6.30]
+    cloud_properties:
+      name: BOSH Network
+
+compilation:
+  workers: 5
+  reuse_compilation_vms: true
+  az: z1
+  vm_type: default
+  network: default

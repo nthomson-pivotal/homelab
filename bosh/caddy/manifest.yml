@@ -1,0 +1,57 @@
+---
+name: caddy
+
+releases:
+- name: caddy
+  version: 0.5.0
+  url: https://bosh.io/d/github.com/dpb587/caddy-bosh-release
+
+instance_groups:
+- name: caddy
+  jobs:
+  - name: caddy
+    release: caddy
+    properties:
+      caddyfile: |
+        kubodash.lab.paasify.org {
+          proxy / https://q-s3.worker.default.cfcr.bosh:32185 {
+            transparent
+            insecure_skip_verify
+          }
+          tls {
+            dns route53
+          }
+        }
+        minio.lab.paasify.org {
+          proxy / http://q-s3.minio.default.minio.bosh:9000 {
+            transparent
+          }
+          tls {
+            dns route53
+          }
+        }
+      env:
+        AWS_ACCESS_KEY_ID: ((/shared/aws/acme-dns/access-key))
+        AWS_SECRET_ACCESS_KEY: ((/shared/aws/acme-dns/secret-key))
+        AWS_HOSTED_ZONE_ID: ((aws_hosted_zone_id))
+        AWS_REGION: ((aws_region))
+  instances: 1
+  persistent_disk: 1024
+  vm_type: default
+  stemcell: default
+  networks:
+    - name: default
+      static_ips: [172.16.6.11]
+  azs:
+  - z1
+
+stemcells:
+- alias: default
+  os: ubuntu-xenial
+  version: latest
+
+update:
+  canaries: 1
+  max_in_flight: 1
+  canary_watch_time: 1000-30000
+  update_watch_time: 1000-30000
