@@ -57,31 +57,6 @@ instance_groups:
   persistent_disk_type: default
   stemcell: default
 
-- name: bucket-seeding # To create default buckets after manifest-deploy
-  azs: [z1]
-  instances: 1
-  lifecycle: errand
-  post_deploy: true
-  jobs:
-  - name: mc
-    release: minio
-    templates:
-    - name: mc
-    consumes:
-      minio: {from: minio-link}
-    properties:
-      script: |
-        #!/bin/sh
-        mc mb myminio/bucket1
-        mc mb myminio/bucket2
-        mc mb myminio/bucket3
-        mc mb myminio/bucket3
-  networks:
-  - name: default
-  vm_type: tiny
-  persistent_disk_type: default
-  stemcell: default
-
 update:
   canaries: 1
   canary_watch_time: 1000-30000
