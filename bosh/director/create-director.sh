@@ -4,7 +4,14 @@ set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-$DIR/deploy-director.sh
+vsphere_password=$1
+
+if [ -z "$vsphere_password" ]; then
+  echo "Error: Must supply vSphere password"
+  exit 1
+fi
+
+$DIR/deploy-director.sh $vsphere_password
 
 bosh alias-env lab -e $(bosh int "$DIR/vars.yml" --path="/internal_ip") --ca-cert <(bosh int $DIR/state/creds.yml --path /director_ssl/ca)
 
