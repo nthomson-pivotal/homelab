@@ -1,15 +1,14 @@
-director_name: bosh-1
+director_name: bosh-lab
 internal_cidr: 172.16.6.0/24
 internal_gw: 172.16.6.1
 internal_ip: 172.16.6.6
 internal_dns: [172.16.6.1]
 network_name: "BOSH Network"
 vcenter_dc: Management
-vcenter_ds: "Nested Datastore *"
+vcenter_ds: "Local Datastore *"
 vcenter_ip: vcsa.lab.paasify.org
 vcenter_user: "administrator@vsphere.local"
-vcenter_password: "Admin123!"
-vcenter_templates: bosh-1-templates
-vcenter_vms: bosh-1ms
-vcenter_disks: bosh-1-disks
+vcenter_templates: bosh-lab-templates
+vcenter_vms: bosh-lab-vms
+vcenter_disks: bosh-lab-disks
 vcenter_cluster: Physical1
