@@ -1,0 +1,16 @@
+- type: replace
+  path: /instance_groups/-
+  value:
+    name: worker-((worker_tag))
+    instances: 1
+    vm_type: ((worker_vm_type))
+    stemcell: xenial
+    networks: [{name: ((network_name))}]
+    azs: [z1]
+    jobs:
+    - release: concourse
+      name: worker
+      properties:
+        drain_timeout: 10m
+        tags: [((worker_tag))]
+        worker_gateway: {worker_key: ((worker_key))}

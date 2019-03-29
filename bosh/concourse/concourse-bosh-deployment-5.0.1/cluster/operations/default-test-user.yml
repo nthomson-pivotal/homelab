@@ -1,0 +1,7 @@
+- type: replace
+  path: /instance_groups/name=web/jobs/name=web/properties/main_team?/auth/local/users
+  value: [test]
+
+- type: replace
+  path: /instance_groups/name=web/jobs/name=web/properties/add_local_users?
+  value: ['test:test']

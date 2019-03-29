@@ -1,0 +1,19 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: concourse/unit
+
+inputs:
+- name: concourse-bosh-deployment
+- name: concourse-boshio
+- name: bpm-release
+- name: postgres-release
+
+outputs:
+- name: bumped-repo
+
+run:
+  path: concourse-bosh-deployment/ci/scripts/bump-versions

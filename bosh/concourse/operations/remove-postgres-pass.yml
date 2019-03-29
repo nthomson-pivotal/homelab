@@ -1,0 +1,2 @@
+- type: remove
+  path: /variables/name=postgres_password
