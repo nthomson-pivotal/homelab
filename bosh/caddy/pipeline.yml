@@ -1,0 +1,33 @@
+resource_types:
+- name: bosh-deploy
+  type: docker-image
+  source:
+    repository: cloudfoundry/bosh-deployment-resource
+
+resources:
+- name: homelab-git
+  type: git
+  source:
+    uri: https://github.com/nthomson-pivotal/homelab.git
+    branch: master
+    paths:
+    - bosh/caddy/*
+- name: bosh-deployment
+  type: bosh-deploy
+  source:
+    skip_check: true
+    target: https://172.16.6.6:25555
+    client: admin
+    client_secret: ((director/admin_password))
+    ca_cert: ((director/director_ssl.ca))
+    deployment: caddy
+
+jobs:
+- name: deploy
+  plan:
+  - get: homelab-git
+  - put: bosh-deployment
+    params:
+      manifest: homelab-git/bosh/caddy/manifest.yml
+      vars_files: 
+      - homelab-git/bosh/caddy/vars.yml
