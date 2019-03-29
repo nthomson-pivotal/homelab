@@ -35,14 +35,19 @@ instance_groups:
       postgres: {as: postgres-database}
     properties:
       databases:
+        databases:
+        - name: atc
         roles:
         - name: pgadmin
           password: ((pgadmin_database_password))
           permissions:
           - "CONNECTION LIMIT 50"
+        - name: concourse
+          password: ((concourse_database_password))
 
 variables:
 - name: pgadmin_database_password
   type: password
-
+- name: concourse_database_password
+  type: password
           
