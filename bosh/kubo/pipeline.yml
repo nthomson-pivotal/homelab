@@ -1,0 +1,66 @@
+resource_types:
+- name: bosh-deploy
+  type: docker-image
+  source:
+    repository: cloudfoundry/bosh-deployment-resource
+- name: bosh-errand
+  type: docker-image
+  source:
+    repository: cfcommunity/bosh2-errand-resource
+
+resources:
+- name: homelab-git
+  type: git
+  source:
+    uri: https://github.com/nthomson-pivotal/homelab.git
+    branch: master
+    paths:
+    - bosh/kubo/*
+- name: bosh-deployment
+  type: bosh-deploy
+  source:
+    skip_check: true
+    target: https://172.16.6.6:25555
+    client: admin
+    client_secret: ((director/admin_password))
+    ca_cert: ((director/director_ssl.ca))
+    deployment: cfcr
+- name: bosh-errand
+  type: bosh-errand
+  source:
+    target: https://172.16.6.6:25555
+    client: admin
+    client_secret: ((director/admin_password))
+    ca_cert: ((director/director_ssl.ca))
+    deployment: cfcr
+
+jobs:
+- name: deploy
+  plan:
+  - get: homelab-git
+  - put: bosh-deployment
+    params:
+      manifest: homelab-git/bosh/kubo/kubo-deployment-0.30.0/manifests/cfcr.yml
+      ops_files:
+      - homelab-git/bosh/kubo/kubo-deployment-0.30.0/manifests/ops-files/misc/scale-to-one-az.yml
+      - homelab-git/bosh/kubo/kubo-deployment-0.30.0/manifests/ops-files/add-hostname-to-master-certificate.yml
+      - homelab-git/bosh/kubo/kubo-deployment-0.30.0/manifests/ops-files/iaas/vsphere/master-static-ip.yml
+      - homelab-git/bosh/kubo/kubo-deployment-0.30.0/manifests/ops-files/vm-types.yml
+      vars_files: 
+      - homelab-git/bosh/kubo/vars.yml
+- name: apply-specs
+  plan:
+  - get: homelab-git
+    trigger: true
+    passed: [deploy]
+  - put: bosh-errand
+    params:
+      name: apply-specs
+- name: test
+  plan:
+  - get: homelab-git
+    trigger: true
+    passed: [apply-specs]
+  - put: bosh-errand
+    params:
+      name: smoke-tests
