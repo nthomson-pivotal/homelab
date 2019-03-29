@@ -60,7 +60,7 @@ instance_groups:
     - name: default
       static_ips: [172.16.6.11]
   azs:
-  - z1
+  - z2
 
 stemcells:
 - alias: default
