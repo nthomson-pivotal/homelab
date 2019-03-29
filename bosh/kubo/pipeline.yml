@@ -38,6 +38,7 @@ jobs:
 - name: deploy
   plan:
   - get: homelab-git
+    trigger: true
   - put: bosh-deployment
     params:
       manifest: homelab-git/bosh/kubo/kubo-deployment-0.30.0/manifests/cfcr.yml
