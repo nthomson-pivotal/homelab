@@ -1,5 +1,4 @@
-api-hostname: kubo.lab.paasify.org
-kubernetes_master_host: 172.16.6.15
+api-hostname: api.kubo.lab.paasify.org
 
 master_vm_type: small
 apply_addons_vm_type: small
