@@ -3,7 +3,7 @@ name: minio
 
 releases:
 - name: minio
-  version: 2019-03-20T22-38-47Z
+  version: latest
   url: https://bosh.io/d/github.com/minio/minio-boshrelease
 
 stemcells:
