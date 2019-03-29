@@ -13,8 +13,17 @@ instance_groups:
     release: caddy
     properties:
       caddyfile: |
-        kubodash.lab.paasify.org {
+        dashboard.kubo.lab.paasify.org {
           proxy / https://q-s3.worker.default.cfcr.bosh:32185 {
+            transparent
+            insecure_skip_verify
+          }
+          tls {
+            dns route53
+          }
+        }
+        api.kubo.lab.paasify.org {
+          proxy / https://q-s3.master.default.cfcr.bosh:8443 {
             transparent
             insecure_skip_verify
           }
