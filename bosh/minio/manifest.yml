@@ -3,8 +3,8 @@ name: minio
 
 releases:
 - name: minio
-  version: latest
-  url: https://bosh.io/d/github.com/minio/minio-boshrelease
+  version: "2019-03-20T22-38-47Z"
+  url: "https://bosh.io/d/github.com/minio/minio-boshrelease?v=2019-03-20T22-38-47Z"
 
 stemcells:
 - alias: default
