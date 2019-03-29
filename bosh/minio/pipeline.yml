@@ -3,8 +3,6 @@ resource_types:
   type: docker-image
   source:
     repository: cloudfoundry/bosh-deployment-resource
-
-resource_types:
 - name: bosh-errand
   type: docker-image
   source:
