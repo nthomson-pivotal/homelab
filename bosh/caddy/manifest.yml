@@ -47,6 +47,22 @@ instance_groups:
             dns route53
           }
         }
+        prometheus.lab.paasify.org {
+          proxy / http://q-s3.prometheus2.default.prometheus.bosh:9090 {
+            transparent
+          }
+          tls {
+            dns route53
+          }
+        }
+        grafana.lab.paasify.org {
+          proxy / http://q-s3.grafana.default.prometheus.bosh:3000 {
+            transparent
+          }
+          tls {
+            dns route53
+          }
+        }
       env:
         AWS_ACCESS_KEY_ID: ((/shared/aws/acme-dns/access-key))
         AWS_SECRET_ACCESS_KEY: ((/shared/aws/acme-dns/secret-key))
