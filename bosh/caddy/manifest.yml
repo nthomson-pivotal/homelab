@@ -30,6 +30,14 @@ instance_groups:
             dns route53
           }
         }
+        concourse.lab.paasify.org {
+          proxy / http://q-s3.web.default.concourse.bosh:8080 {
+            transparent
+          }
+          tls {
+            dns route53
+          }
+        }
       env:
         AWS_ACCESS_KEY_ID: ((/shared/aws/acme-dns/access-key))
         AWS_SECRET_ACCESS_KEY: ((/shared/aws/acme-dns/secret-key))
