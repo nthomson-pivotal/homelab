@@ -1,0 +1,15 @@
+- type: replace
+  path: /instance_groups/name=grafana/jobs/name=grafana/properties/grafana?/database?/host?
+  value: ((postgres_host))
+
+- type: remove
+  path: /instance_groups/name=database
+
+- type: remove
+  path: /instance_groups/name=grafana/jobs/name=grafana/properties/grafana/session
+  
+- type: remove
+  path: /releases/name=postgres
+
+- type: remove
+  path: /variables/name=postgres_grafana_password

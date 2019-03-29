@@ -1,0 +1,2 @@
+postgres_host: 172.16.6.16
+postgres_grafana_password: ((/bosh-lab/postgres/grafana_database_password))
