@@ -37,6 +37,7 @@ instance_groups:
       databases:
         databases:
         - name: atc
+        - name: grafana
         roles:
         - name: pgadmin
           password: ((pgadmin_database_password))
@@ -44,10 +45,14 @@ instance_groups:
           - "CONNECTION LIMIT 50"
         - name: concourse
           password: ((concourse_database_password))
+        - name: grafana
+          password: ((grafana_database_password))
 
 variables:
 - name: pgadmin_database_password
   type: password
 - name: concourse_database_password
+  type: password
+- name: grafana_database_password
   type: password
           
