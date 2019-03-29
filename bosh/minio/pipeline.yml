@@ -4,6 +4,12 @@ resource_types:
   source:
     repository: cloudfoundry/bosh-deployment-resource
 
+resource_types:
+- name: bosh-errand
+  type: docker-image
+  source:
+    repository: cfcommunity/bosh2-errand-resource
+
 resources:
 - name: homelab-git
   type: git
@@ -21,11 +27,29 @@ resources:
     client_secret: ((director/admin_password))
     ca_cert: ((director/director_ssl.ca))
     deployment: minio
+- name: test-errand
+  type: bosh-errand
+  source:
+    target: https://172.16.6.6:25555
+    client: admin
+    client_secret: ((director/admin_password))
+    ca_cert: ((director/director_ssl.ca))
+    deployment: minio
 
 jobs:
 - name: deploy
   plan:
   - get: homelab-git
+    trigger: true
   - put: bosh-deployment
     params:
       manifest: homelab-git/bosh/minio/manifest.yml
+
+- name: test
+  plan:
+  - get: homelab-git
+    trigger: true
+    passed: [deploy]
+  - put: test-errand
+    params:
+      name: smoke-tests
