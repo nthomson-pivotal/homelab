@@ -26,6 +26,7 @@ jobs:
 - name: deploy
   plan:
   - get: homelab-git
+    triggers: true
   - put: bosh-deployment
     params:
       manifest: homelab-git/bosh/caddy/manifest.yml
