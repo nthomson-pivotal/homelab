@@ -63,6 +63,15 @@ instance_groups:
             dns route53
           }
         }
+        vault.lab.paasify.org {
+          proxy / https://q-s3.vault.default.vault.bosh:8200 {
+            transparent
+            insecure_skip_verify
+          }
+          tls {
+            dns route53
+          }
+        }
       env:
         AWS_ACCESS_KEY_ID: ((/shared/aws/acme-dns/access-key))
         AWS_SECRET_ACCESS_KEY: ((/shared/aws/acme-dns/secret-key))
