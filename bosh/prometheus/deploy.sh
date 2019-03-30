@@ -13,6 +13,7 @@ bosh -n deploy $prometheus_deployment/manifests/prometheus.yml \
   -o $prometheus_deployment/manifests/operators/enable-bosh-uaa.yml \
   -o $prometheus_deployment/manifests/operators/monitor-postgres.yml \
   -o $prometheus_deployment/manifests/operators/monitor-concourse.yml \
+  -o $prometheus_deployment/manifests/operators/monitor-vault.yml \
   -o $DIR/operations/external-postgres.yml \
   -o $DIR/operations/no-nginx.yml \
   -l $DIR/vars.yml

@@ -7,3 +7,5 @@ uaa_bosh_exporter_client_secret: ((/concourse/main/director/uaa_bosh_exporter_cl
 metrics_environment: lab
 
 postgres_datasource_name: postgresql://grafana:((/bosh-lab/postgres/grafana_database_password))@172.16.6.16:5432/?sslmode=disable
+
+vault_address: vault.lab.paasify.org
