@@ -13,9 +13,9 @@ fi
 
 $DIR/deploy-director.sh $vsphere_password
 
-bosh alias-env lab -e $(bosh int "$DIR/vars.yml" --path="/internal_ip") --ca-cert <(bosh int $DIR/state/creds.yml --path /director_ssl/ca)
-
 source $DIR/login.sh
+
+bosh alias-env lab -e $(bosh int "$DIR/vars.yml" --path="/internal_ip") --ca-cert <(bosh int $DIR/state/creds.yml --path /director_ssl/ca)
 
 # Xenial Stemcell
 bosh -n upload-stemcell --sha1 9723f506c44f100c949b5bd7734d539168d3696e https://bosh.io/d/stemcells/bosh-vsphere-esxi-ubuntu-xenial-go_agent?v=250.23

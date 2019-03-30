@@ -12,3 +12,4 @@ vcenter_templates: bosh-lab-templates
 vcenter_vms: bosh-lab-vms
 vcenter_disks: bosh-lab-disks
 vcenter_cluster: Physical1
+vcenter_cluster2: Physical2
