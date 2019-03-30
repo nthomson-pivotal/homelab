@@ -1,2 +1,9 @@
 postgres_host: 172.16.6.16
 postgres_grafana_password: ((/bosh-lab/postgres/grafana_database_password))
+
+bosh_url: 'https://172.16.6.6:25555'
+bosh_ca_cert: ((/concourse/main/director/director_ssl.ca))
+uaa_bosh_exporter_client_secret: ((/concourse/main/director/uaa_bosh_exporter_client_secret))
+metrics_environment: lab
+
+postgres_datasource_name: postgresql://grafana:((/bosh-lab/postgres/grafana_database_password))@172.16.6.16:5432/?sslmode=disable
