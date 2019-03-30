@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bosh -n -d cfcr delete-deployment
+bosh -n -d cfcr delete-deployment --force
