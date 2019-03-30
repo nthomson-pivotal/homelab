@@ -9,3 +9,11 @@ metrics_environment: lab
 postgres_datasource_name: postgresql://grafana:((/bosh-lab/postgres/grafana_database_password))@172.16.6.16:5432/?sslmode=disable
 
 vault_address: vault.lab.paasify.org
+
+probe_endpoints: [
+  https://concourse.lab.paasify.org,
+  https://vault.lab.paasify.org/v1/sys/health,
+  https://minio.lab.paasify.org/minio/health/live
+]
+
+skip_ssl_verify: false
