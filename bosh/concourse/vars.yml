@@ -13,3 +13,4 @@ postgres_host: 172.16.6.16
 postgres_port: 5432
 postgres_password: ((/bosh-lab/postgres/concourse_database_password))
 postgres_role: concourse
+prometheus_port: 9391

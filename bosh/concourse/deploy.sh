@@ -11,5 +11,6 @@ bosh -n deploy $concourse_deployment/cluster/concourse.yml \
   -o $concourse_deployment/cluster/operations/external-postgres.yml \
   -o $concourse_deployment/cluster/operations/basic-auth.yml \
   -o $concourse_deployment/cluster/operations/credhub.yml \
+  -o $concourse_deployment/cluster/operations/prometheus.yml \
   -o $DIR/operations/remove-postgres-pass.yml \
   -l $DIR/vars.yml
