@@ -1,0 +1,5 @@
+- path: /instance_groups/name=bosh/properties/vcenter/datacenters/0/clusters
+  type: replace
+  value:
+    - ((vcenter_cluster)): {}
+    - ((vcenter_cluster2)): {}
