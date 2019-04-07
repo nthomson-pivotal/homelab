@@ -36,7 +36,7 @@ instance_groups:
   networks:
   - name: default
   vm_type: default
-  persistent_disk_type: default
+  persistent_disk_type: 100GB
   stemcell: default
 
 - name: tests
