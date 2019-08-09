@@ -4,7 +4,7 @@ export BOSH_DEPLOYMENT=cfcr
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-kubo_deployment=$DIR/kubo-deployment-0.30.0
+kubo_deployment=$DIR/kubo-deployment
 
 bosh -n update-config --name cfcr-cc-vm_extension-vsphere \
   ${kubo_deployment}/manifests/cloud-config/iaas/vsphere/use-vm-extensions.yml \
