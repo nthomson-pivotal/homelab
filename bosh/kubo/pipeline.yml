@@ -45,6 +45,8 @@ jobs:
       ops_files:
       - homelab-git/bosh/kubo/kubo-deployment-0.30.0/manifests/ops-files/add-hostname-to-master-certificate.yml
       - homelab-git/bosh/kubo/kubo-deployment-0.30.0/manifests/ops-files/vm-types.yml
+      - homelab-git/bosh/kubo/kubo-deployment-0.30.0/manifests/ops-files/iaas/vsphere/cloud-provider.yml
+      - homelab-git/bosh/kubo/kubo-deployment-0.30.0/manifests/ops-files/iaas/vsphere/use-vm-extensions.yml
       - homelab-git/bosh/kubo/operations/set-scale.yml
       vars_files: 
       - homelab-git/bosh/kubo/vars.yml
