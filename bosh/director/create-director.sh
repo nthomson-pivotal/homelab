@@ -26,6 +26,9 @@ bosh -n upload-stemcell --sha1 87851d1550022eab3550e732462699a20bf3513b https://
 $DIR/update-cloud-config.sh
 $DIR/update-runtime-config.sh
 
+$DIR/credhub-login.sh
+$DIR/director-to-credhub.sh
+
 echo "-----------------------------------"
 echo "To login: source login.sh"
 echo "-----------------------------------"
