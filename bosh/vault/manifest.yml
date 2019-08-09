@@ -1,5 +1,11 @@
 name: vault
 
+releases:
+- name: vault
+  version: 1.1.3
+  url: https://github.com/cloudfoundry-community/vault-boshrelease/releases/download/v1.1.3/vault-1.1.3.tgz
+  sha1: f345914ee17160524595ee92be7d324b52676916
+
 instance_groups:
 - name: vault
   instances: 1
@@ -65,9 +71,3 @@ stemcells:
 - alias: xenial
   os: ubuntu-xenial
   version: latest
-
-releases:
-- name: vault
-  version: 1.1.3
-  url: https://github.com/cloudfoundry-community/vault-boshrelease/releases/download/v1.1.3/vault-1.1.3.tgz
-  sha1: f345914ee17160524595ee92be7d324b52676916
