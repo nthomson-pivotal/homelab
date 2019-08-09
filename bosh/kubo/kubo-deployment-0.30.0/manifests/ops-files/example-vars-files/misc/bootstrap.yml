@@ -1,3 +1,0 @@
-deployment_name: cfcr-bootstrap
-kubernetes_master_host: cfcr-bootstrap.com
-worker_count: 1

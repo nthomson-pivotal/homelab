@@ -1,3 +1,0 @@
-- type: replace
-  path: /instance_groups/name=worker/jobs/name=worker/properties/garden?/dns_servers?
-  value: ((garden_dns_servers))

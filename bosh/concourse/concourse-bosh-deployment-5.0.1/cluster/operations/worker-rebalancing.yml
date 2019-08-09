@@ -1,3 +1,0 @@
-- type: replace
-  path: /instance_groups/name=worker/jobs/name=worker/properties/worker_gateway/rebalance_interval?
-  value: ((worker_rebalance_interval))

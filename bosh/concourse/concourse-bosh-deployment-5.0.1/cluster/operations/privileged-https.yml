@@ -1,3 +1,0 @@
-- type: replace
-  path: /instance_groups/name=web/jobs/name=web/properties/tls?/bind_port?
-  value: 443

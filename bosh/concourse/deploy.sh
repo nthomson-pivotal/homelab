@@ -4,7 +4,7 @@ export BOSH_DEPLOYMENT=concourse
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-concourse_deployment=$DIR/concourse-bosh-deployment-5.0.1
+concourse_deployment=$DIR/concourse-bosh-deployment
 
 bosh -n deploy $concourse_deployment/cluster/concourse.yml \
   -l $concourse_deployment/versions.yml \
