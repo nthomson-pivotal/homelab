@@ -4,3 +4,6 @@
 [submodule "bosh/kubo/kubo-deployment"]
 	path = bosh/kubo/kubo-deployment
 	url = https://github.com/cloudfoundry-incubator/kubo-deployment.git
+[submodule "bosh/prometheus/prometheus-boshrelease"]
+	path = bosh/prometheus/prometheus-boshrelease
+	url = https://github.com/bosh-prometheus/prometheus-boshrelease.git
