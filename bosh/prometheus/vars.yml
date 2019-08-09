@@ -1,4 +1,4 @@
-grafana_root_url: 'https://grafana.lab.paasify.org'
+grafana_root_url: "https://grafana.lab.paasify.org"
 
 grafana_github_user: 809d4abbdb1c4879a04a
 grafana_github_password: 3b495a7410d1063a29ecd2e1213c788f0b2d9129
@@ -6,21 +6,21 @@ grafana_github_password: 3b495a7410d1063a29ecd2e1213c788f0b2d9129
 postgres_host: 172.16.6.16
 postgres_grafana_password: ((/bosh-lab/postgres/grafana_database_password))
 
-bosh_url: 'https://172.16.6.6:25555'
+bosh_url: "https://172.16.6.6:25555"
 bosh_ca_cert: ((/concourse/main/director/director_ssl.ca))
 uaa_bosh_exporter_client_secret: ((/concourse/main/director/uaa_bosh_exporter_client_secret))
 metrics_environment: lab
 
-postgres_datasource_name: 'postgresql://grafana:((/bosh-lab/postgres/grafana_database_password))@172.16.6.16:5432/?sslmode=disable'
+postgres_datasource_name: "postgresql://grafana:((/bosh-lab/postgres/grafana_database_password))@172.16.6.16:5432/?sslmode=disable"
 
-vault_address: 'https://vault.lab.paasify.org'
+vault_address: "https://vault.lab.paasify.org"
 
 probe_endpoints: |-
-- 'https://concourse.lab.paasify.org',
-- 'https://vault.lab.paasify.org/v1/sys/health',
-- 'https://minio.lab.paasify.org/minio/health/live'
+- "https://concourse.lab.paasify.org",
+- "https://vault.lab.paasify.org/v1/sys/health",
+- "https://minio.lab.paasify.org/minio/health/live"
 
 skip_ssl_verify: false
 
-alertmanager_slack_api_url: 'https://hooks.slack.com/services/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'
-alertmanager_slack_channel: '#lab'
+alertmanager_slack_api_url: "https://hooks.slack.com/services/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"
+alertmanager_slack_channel: "#lab"
