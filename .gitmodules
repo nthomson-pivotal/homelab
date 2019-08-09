@@ -1,3 +1,6 @@
 [submodule "bosh/concourse/concourse-bosh-deployment"]
 	path = bosh/concourse/concourse-bosh-deployment
 	url = https://github.com/concourse/concourse-bosh-deployment.git
+[submodule "bosh/kubo/kubo-deployment"]
+	path = bosh/kubo/kubo-deployment
+	url = https://github.com/cloudfoundry-incubator/kubo-deployment.git
