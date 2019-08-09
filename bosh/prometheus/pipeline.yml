@@ -29,15 +29,15 @@ jobs:
     trigger: true
   - put: bosh-deployment
     params:
-      manifest: homelab-git/bosh/prometheus/prometheus-boshrelease-24.1.0/manifests/prometheus.yml
+      manifest: homelab-git/bosh/prometheus/prometheus-boshrelease/manifests/prometheus.yml
       ops_files:
-      - homelab-git/bosh/prometheus/prometheus-boshrelease-24.1.0/manifests/operators/enable-root-url.yml
-      - homelab-git/bosh/prometheus/prometheus-boshrelease-24.1.0/manifests/operators/monitor-bosh.yml
-      - homelab-git/bosh/prometheus/prometheus-boshrelease-24.1.0/manifests/operators/enable-bosh-uaa.yml
-      - homelab-git/bosh/prometheus/prometheus-boshrelease-24.1.0/manifests/operators/monitor-concourse.yml
-      - homelab-git/bosh/prometheus/prometheus-boshrelease-24.1.0/manifests/operators/monitor-postgres.yml
-      - homelab-git/bosh/prometheus/prometheus-boshrelease-24.1.0/manifests/operators/monitor-vault.yml
-      - homelab-git/bosh/prometheus/prometheus-boshrelease-24.1.0/manifests/operators/monitor-http-probe.yml
+      - homelab-git/bosh/prometheus/prometheus-boshrelease/manifests/operators/enable-root-url.yml
+      - homelab-git/bosh/prometheus/prometheus-boshrelease/manifests/operators/monitor-bosh.yml
+      - homelab-git/bosh/prometheus/prometheus-boshrelease/manifests/operators/enable-bosh-uaa.yml
+      - homelab-git/bosh/prometheus/prometheus-boshrelease/manifests/operators/monitor-concourse.yml
+      - homelab-git/bosh/prometheus/prometheus-boshrelease/manifests/operators/monitor-postgres.yml
+      - homelab-git/bosh/prometheus/prometheus-boshrelease/manifests/operators/monitor-vault.yml
+      - homelab-git/bosh/prometheus/prometheus-boshrelease/manifests/operators/monitor-http-probe.yml
       - homelab-git/bosh/prometheus/operations/external-postgres.yml
       - homelab-git/bosh/prometheus/operations/no-nginx.yml
       vars_files: 
