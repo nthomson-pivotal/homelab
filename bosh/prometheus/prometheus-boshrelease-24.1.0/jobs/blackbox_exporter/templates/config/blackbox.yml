@@ -1,1 +1,0 @@
-<%= p('blackbox_exporter.config', {}).to_yaml %>

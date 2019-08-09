@@ -1,5 +1,0 @@
-check process memcached_exporter
-  with pidfile /var/vcap/sys/run/memcached_exporter/memcached_exporter.pid
-  start program "/var/vcap/jobs/memcached_exporter/bin/memcached_exporter_ctl start"
-  stop program "/var/vcap/jobs/memcached_exporter/bin/memcached_exporter_ctl stop"
-  group vcap

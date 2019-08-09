@@ -1,6 +1,0 @@
----
-name: firehose_exporter
-
-files:
-  - common/utils.sh
-  - firehose_exporter/firehose_exporter-5.0.4.linux-amd64.tar.gz

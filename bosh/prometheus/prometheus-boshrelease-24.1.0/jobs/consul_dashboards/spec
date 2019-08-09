@@ -1,9 +1,0 @@
----
-name: consul_dashboards
-
-packages: []
-
-templates:
-  consul_overview.json: consul_overview.json
-
-properties: {}

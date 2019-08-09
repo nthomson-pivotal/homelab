@@ -1,5 +1,0 @@
----
-name: grafana_plugins
-
-files:
-  - grafana_plugins/**/*

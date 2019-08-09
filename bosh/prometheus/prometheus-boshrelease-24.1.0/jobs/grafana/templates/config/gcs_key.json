@@ -1,1 +1,0 @@
-<%= p('grafana.external_image_storage.gcs.json_key', '') %>
