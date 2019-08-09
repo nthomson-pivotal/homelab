@@ -15,7 +15,7 @@ postgres_datasource_name: 'postgresql://grafana:((/bosh-lab/postgres/grafana_dat
 
 vault_address: 'https://vault.lab.paasify.org'
 
-probe_endpoints:
+probe_endpoints: |-
 - 'https://concourse.lab.paasify.org',
 - 'https://vault.lab.paasify.org/v1/sys/health',
 - 'https://minio.lab.paasify.org/minio/health/live'
