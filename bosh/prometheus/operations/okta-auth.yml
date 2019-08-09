@@ -1,0 +1,12 @@
+---
+- type: replace
+  path: /instance_groups/name=grafana/jobs/name=grafana/properties/grafana/auth?/generic_oauth
+  value:
+    name: Okta
+    enabled: true
+    api_url: "https://paasify.okta.com/oauth2/v1/userinfo"
+    token_url: "https://paasify.okta.com/oauth2/v1/token"
+    auth_url: "https://paasify.okta.com/oauth2/v1/authorize"
+    client_id: "0oaelqt74Bc1mooW7356"
+    client_secret: "t3SjK3_hSLDWOdwC0IHBG9j0d7_CuNjLrcBAofii"
+    scopes: "openid profile email"

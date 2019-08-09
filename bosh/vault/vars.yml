@@ -1,0 +1,5 @@
+postgres_host: 172.16.6.16
+postgres_password: ((/bosh-lab/postgres/vault_database_password))
+
+aws_region: us-west-2
+aws_kms_id: 973cb94b-df03-4bbd-8a6b-aaaf20c8953d

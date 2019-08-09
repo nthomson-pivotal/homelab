@@ -3,3 +3,12 @@ api-hostname: api.kubo.lab.paasify.org
 master_vm_type: small
 apply_addons_vm_type: small
 worker_vm_type: large
+
+vcenter_master_user: administrator@vsphere.local
+vcenter_master_password: Admin123!
+vcenter_ip: vcsa.lab.paasify.org
+vcenter_dc: Management
+vcenter_ds: Local Datastore 2
+vcenter_vms: kubo
+director_uuid: 38a2a5c5-29d5-43e9-62dd-91ee79a09243
+deployment_name: cfcr

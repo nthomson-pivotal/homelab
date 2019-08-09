@@ -31,6 +31,7 @@ jobs:
     params:
       manifest: homelab-git/bosh/prometheus/prometheus-boshrelease-24.1.0/manifests/prometheus.yml
       ops_files:
+      - homelab-git/bosh/prometheus/prometheus-boshrelease-24.1.0/manifests/operators/enable-root-url.yml
       - homelab-git/bosh/prometheus/prometheus-boshrelease-24.1.0/manifests/operators/monitor-bosh.yml
       - homelab-git/bosh/prometheus/prometheus-boshrelease-24.1.0/manifests/operators/enable-bosh-uaa.yml
       - homelab-git/bosh/prometheus/prometheus-boshrelease-24.1.0/manifests/operators/monitor-concourse.yml

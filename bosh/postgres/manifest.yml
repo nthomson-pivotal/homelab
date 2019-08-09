@@ -10,7 +10,7 @@ update:
 releases:
 - name: postgres
   version: 36
-  url: https://bosh.io/d/github.com/cloudfoundry/postgres-release
+  url: https://bosh.io/d/github.com/cloudfoundry/postgres-release?v=36
 
 stemcells:
 - alias: default

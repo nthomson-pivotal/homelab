@@ -7,7 +7,7 @@
   value: 1
 - type: replace
   path: /instance_groups/name=worker/instances
-  value: 2
+  value: 3
 - type: replace
   path: /instance_groups/name=apply-addons/instances
   value: 1
@@ -17,7 +17,7 @@
   value: [ z2 ]
 - type: replace
   path: /instance_groups/name=worker/azs
-  value: [ z2, z1 ]
+  value: [ z2 ]
 - type: replace
   path: /instance_groups/name=apply-addons/azs
   value: [ z2 ]

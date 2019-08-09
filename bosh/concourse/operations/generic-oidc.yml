@@ -1,0 +1,22 @@
+- type: replace
+  path: /instance_groups/name=web/jobs/name=web/properties/generic_oidc?
+  value:
+    client_id: ((oidc.client_username))
+    client_secret: ((oidc.client_password))
+    issuer: ((oidc.issuer_url))
+    scopes: ((oidc.scopes))
+    groups_key: ((oidc.groups_key))
+    user_name_key: ((oidc.user_name_key))
+    display_name: ((oidc.display_name))
+
+- type: replace
+  path: /instance_groups/name=web/jobs/name=web/properties/log_level?
+  value: debug
+
+- type: replace
+  path: /instance_groups/name=web/jobs/name=web/properties/main_team?/auth/oidc/users
+  value: ((main_team.oidc_users))
+
+- type: replace
+  path: /instance_groups/name=web/jobs/name=web/properties/main_team?/auth/oidc/groups
+  value: ((main_team.oidc_groups))
