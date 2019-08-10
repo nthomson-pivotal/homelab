@@ -4,6 +4,8 @@ set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
+source $DIR/common.sh
+
 vsphere_password=$1
 
 if [ -z "$vsphere_password" ]; then
@@ -12,8 +14,8 @@ if [ -z "$vsphere_password" ]; then
 fi
 
 bosh -n create-env ~/projects/bosh-deployment/bosh.yml \
-    --state=$DIR/state/state.json \
-    --vars-store=$DIR/state/creds.yml \
+    --state=$STATE_DIR/state.json \
+    --vars-store=$STATE_DIR/creds.yml \
     -o ~/projects/bosh-deployment/vsphere/cpi.yml \
     -o $DIR/operations/cpi.yml \
     -o ~/projects/bosh-deployment/jumpbox-user.yml \
