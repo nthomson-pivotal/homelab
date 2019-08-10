@@ -6,7 +6,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 pwd
 
-ls $HOME/director-state
+ls director-state
 
 #tar zxf 
 
