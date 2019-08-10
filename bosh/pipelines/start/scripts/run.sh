@@ -10,4 +10,6 @@ export STATE_DIR=$(pwd)
 
 source $DIR/../../../director/login.sh
 
+env
+
 bosh vms
