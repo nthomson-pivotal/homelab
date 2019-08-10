@@ -23,7 +23,7 @@ jobs:
           platform: linux
           image_resource:
             type: docker-image
-            source: {repository: cloudfoundry/bosh-deployment-resource}
+            source: {repository: orangecloudfoundry/orange-cf-bosh-cli}
           inputs:
             - name: homelab-git
             - name: director-state
