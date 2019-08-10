@@ -6,8 +6,6 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
 pwd
 
-ls director-state
-
-#tar zxf 
+tar zxf director-state/state-0.tgz
 
 #$DIR/../../../start.sh
