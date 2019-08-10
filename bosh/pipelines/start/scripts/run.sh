@@ -4,10 +4,10 @@ set -e
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-pwd
-
 tar zxf director-state/state-0.tgz
 
-ls
+export STATE_DIR=$(pwd)
 
-#$DIR/../../../start.sh
+source $DIR/../../../director/login.sh
+
+bosh vms
