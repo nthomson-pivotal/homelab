@@ -10,8 +10,4 @@ export STATE_DIR=$(pwd)
 
 export BOSH_CA_CERT=$(bosh int $STATE_DIR/creds.yml --path /director_ssl/ca)
 
-source $DIR/../../../director/login.sh
-
-env
-
-bosh vms
+source homelab-git/bosh/start.sh
