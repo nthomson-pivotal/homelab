@@ -3,7 +3,7 @@ local_user.password: admin
 external_url: https://concourse.lab.paasify.org
 network_name: default
 web_vm_type: default
-worker_vm_type: default
+worker_vm_type: medium
 deployment_name: concourse
 credhub_url: https://172.16.6.6:8844
 credhub_client_id: concourse-credhub
