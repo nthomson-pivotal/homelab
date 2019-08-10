@@ -8,4 +8,6 @@ pwd
 
 tar zxf director-state/state-0.tgz
 
+ls
+
 #$DIR/../../../start.sh
