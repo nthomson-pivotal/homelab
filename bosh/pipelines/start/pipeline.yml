@@ -1,0 +1,31 @@
+resources:
+- name: director-state
+  type: s3
+  source:
+    endpoint: https://minio.lab.paasify.org
+    bucket: director
+    access_key_id: ((minio-accesskey))
+    secret_access_key: ((minio-secretkey))
+    regexp: state-(.*).tgz
+- name: homelab-git
+  type: git
+  source:
+    uri: https://github.com/nthomson-pivotal/homelab.git
+    branch: master
+
+jobs:
+  - name: test-job
+    plan:
+      - get: homelab-git
+      - get: director-state
+      - task: test-task
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source: {repository: cloudfoundry/bosh-deployment-resource}
+          inputs:
+            - name: homelab-git
+            - name: director-state
+          run:
+            path: homelab-git/bosh/pipelines/start/scripts/run.sh
